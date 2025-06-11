@@ -1,0 +1,103 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4b006e;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+  }
+  
+  .navbar .search-bar button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .navbar .user-icon {
+    font-size: 24px;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #e0f3ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .card .details {
+    padding: 10px;
+  }
+  
+  .card .details h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .card .details .highlight {
+    background-color: #ffd700;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .card .details button {
+    background-color: #4b006e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .card .details .info {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #555;
+  }

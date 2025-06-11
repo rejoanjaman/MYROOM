@@ -1,0 +1,132 @@
+
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Blue background */
+    color: rgb(250, 249, 249);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Design */
+.logo h2 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.logo h2:hover {
+    color: #f0f0f0;
+}
+
+/* Search Area */
+.search-area {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 40%;
+}
+
+.search-area input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-area input::placeholder {
+    color: #aaa;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* User Icon */
+.user-icon a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    background-color: #0056b3;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+   
+}
+
+.user-icon a:hover {
+    background-color: #003f7f;
+}
+a{
+  color: #f4f4f4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-area {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .user-icon {
+        align-self: flex-end;
+    }
+}
+h-area {
+    display: none;
+  }
+
+    </style>
+
+
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+         <a href="/#"> <h2 id="logo" > room</h2></a>
+           <!--<img src="logo.png" alt="Logo">--> 
+        </div>
+
+        <!-- Search Area -->
+        <div class="search-area">
+            <input type="text" placeholder="Search...">
+            <span class="search-icon">&#128269;</span>
+        </div>
+
+        <!-- User Icon -->
+          <div class="user-icon"><a href="{% url 'login' %}" >&#128100;</a></div>
+    </div>
+
+</html>

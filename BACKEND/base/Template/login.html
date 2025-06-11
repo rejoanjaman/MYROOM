@@ -1,0 +1,80 @@
+{%extends 'main.html'%}
+{%block content%}
+    <style>
+        .login {
+        display: flex;
+        justify-content: center;  /* Center horizontally */
+        align-items: center;      /* Center vertically */
+          height: 100svh;          /* Full viewport height */
+}
+        
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            /* Container styles using CSS Grid */
+
+            display: grid;
+            place-items: center;      /* Center both horizontally and vertically */
+            width: 50%;               /* Set the width you want for your container */
+                        /* Optional padding */
+            background-color: #f4f4f4; /* Optional background color */
+            border: 1px solid #064b84;   /* Optional border */
+                       /* Full viewport height */
+
+
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #a8a5a5;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+
+<div class="login"> 
+    <div class="login-container">
+        <h2>User Login</h2>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            
+            <label for="mobil_no">Mobile Number:</label>
+            <input type="text" name="mobil_no" id="mobil_no" placeholder="Enter your mobile number" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+<script>
+    const email=document.getElementById("email").Value
+</script>
+
+{%endblock content%}

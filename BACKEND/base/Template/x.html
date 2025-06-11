@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map with Content Below</title>
+  <style>
+    #map-container {
+      width: 10cm;
+      height: 13cm;
+      margin-bottom: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .content {
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0949867847383!2d-122.4064172846797!3d37.785834979756265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064fa1f72a1%3A0xa3d2be32bfe8f9f9!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1696871780946!5m2!1sen!2s"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="content">
+    <h2>Welcome to Our Location</h2>
+    <p>Here is some additional content below the map.</p>
+  </div>
+</body>
+</html>

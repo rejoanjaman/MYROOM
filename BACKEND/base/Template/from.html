@@ -1,0 +1,128 @@
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="file"] {
+            padding: 5px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create Profile</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="profile_image">Profile Image:</label>
+                <input type="file" id="profile_image" name="profile_image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="profile_name">Profile Name:</label>
+                <input type="text" id="profile_name" name="profile_name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="user_id">User ID:</label>
+                <input type="text" id="user_id" name="user_id" placeholder="Enter your User ID" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile_no">Mobile Number:</label>
+                <input type="tel" id="mobile_no" name="mobile_no" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="business_type">Business Type:</label>
+                <select id="business_type" name="business_type" required>
+                    <option value="">Select an option</option>
+                    <option value="mees">Mees</option>
+                    <option value="personal_house">Personal House</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="total_room">Total Rooms:</label>
+                <input type="number" id="total_room" name="total_room" placeholder="Enter total number of rooms" required>
+            </div>
+            <div class="form-group">
+                <label for="available_room">Available Rooms:</label>
+                <input type="number" id="available_room" name="available_room" placeholder="Enter available number of rooms" required>
+            </div>
+            <div class="form-group">
+                <label for="room_rent">Room Rent:</label>
+                <input type="number" id="room_rent" name="room_rent" placeholder="Enter room rent" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Enter a detailed description"></textarea>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

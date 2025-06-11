@@ -1,0 +1,356 @@
+{%extends 'main.html'%}
+
+{%block content%}
+<style>
+   
+ 
+
+
+   #map-container {
+  width: 10cm; 
+  height: 12cm; 
+  margin: 10px;
+ 
+  
+  border-radius: 5px; 
+  overflow: hidden; 
+  border: 1px cadetblue;
+}
+
+#map-container iframe {
+  width: 95%; 
+  height: 95%; 
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+  
+   
+}
+
+
+.content {
+  margin: 10px;
+  width: 9.5cm;
+  height: max-content; 
+  background-color: #f5f5f5; 
+  border-radius: 5px; 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 1); 
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; 
+  }
+  #map-container {
+    flex: 0 0 50%; 
+  }
+  .content {
+    flex: 1 1 auto; 
+     
+  }
+}
+.profilecontent {
+  background-color: aliceblue;
+    
+    justify-content: center; /* Center horizontally */
+     align-items: center;  /* Center vertically */
+    margin-top : 20px; 
+    width: 1400px;   
+    margin: 10px; 
+    height: fit-content;   /* Add some top margin */
+}
+
+.profile {
+  margin-top: 10px;
+  margin-left: auto;
+    display: flex;
+    border: 1px solid #ccc; /* Light gray border */
+    height:280px;
+    border-radius: 8px;   /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #88bbdc; /* Light background */
+    max-width: 1000px; /* Limit width for larger screens */
+    width: 95%; /* Take up most of the container width */
+}
+
+#profile_image {
+    width: 205px;       /* Fixed width for image container */
+    height: 205px;      /* Fixed height for image container */
+    margin:auto ; /* Space between image and details */
+    overflow: hidden; /* Ensure image fits within container */
+    border-radius: 8px; /* Match container radius */
+}
+
+#profile_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+#profile_detils {
+ margin-left: 8px;
+ margin-top:5px ;
+    flex-grow: 1; /* Allow details to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+#profile_detils div:first-child{
+    margin-bottom: 10px;
+}
+
+#prfilename {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+#profile_detils i {
+    display: block; /* Make each icon a block element */
+    margin: 3px; /* Add spacing between icons */
+    color: gold;
+}
+
+#profile_content {
+    font-weight: bold;
+    margin-right: 5px;color: rgb(97, 66, 23);
+  font-style: normal;
+  font-size: large;
+}
+
+#discreption{
+
+  border: none;
+    margin-bottom: 8px;
+  
+    background-color: #c1c5bdf6;
+    width: 450px;
+    height: 80px;border-radius: 2px;
+}
+
+#location, #contact {
+    padding: 8px 16px;
+    margin: 9px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 40px;
+}
+
+#location:hover, #contact:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+#down{
+  display: flex;
+}
+#site_container{position: absolute;
+  right: 0%;
+  height: fit-content;
+  width: fit-content;
+  margin:0%;
+  background-color: aqua;
+
+}
+.home{
+  background-color: azure;
+  display: flex;
+}
+#available{
+  background-color: darkgoldenrod;margin-left: 40px;
+}
+
+        /* Basic Reset */
+        
+        
+
+        /* Navbar Container */
+        .vertical-navbar {
+            width: 300px; /* Fixed width */
+            background-color: #333; /* Navbar background color */
+            /* Full height of the viewport */
+            padding: 10px 0; /* Top and bottom padding */
+        }
+
+        /* Navbar List */
+        .vertical-navbar ul {
+            list-style-type: none; /* Remove bullets */
+        }
+
+        /* Navbar Items */
+        .vertical-navbar li {
+            margin: 10px 0; /* Space between items */
+        }
+
+        /* Navbar Links */
+        .vertical-navbar a {
+            text-decoration: none; 
+            color: white; 
+            display: block;
+            padding: 10px 20px; 
+           
+        }
+
+        
+        .vertical-navbar a:hover {
+            background-color: #575757; 
+            color: #f1f1f1; 
+        }
+  
+    
+
+
+
+@media (max-width: 600px) {
+    .profile {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    #profile_image {
+        margin: 0 0 10px 0; 
+        width: 150px;
+        height: 150px;
+    }
+}
+  </style>
+
+<body>
+   <div class="home">
+    <div class="vertical-navbar">
+      <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact us</a></li>
+      </ul>
+  </div>
+    <div class="profilecontent">
+      <div class="profile">
+          <div id="profile_image">
+            <img src="/base/stastic/house-clipart.jpg">
+          </div>
+          <div id="profile_detils">
+            <div>
+              <h3 id="prfilename">Xyz</h3>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <h4><span id="profile_content">room:12</span> <span id="available"> available 1 bed with rent 1200</span></h4>
+              <h4><span id="profile_content">type:mess</span><span id="type"></span></h4>
+              <h4><span id="profile_content">rent:3300</span><span id="rent"></span></h4>
+            </div>
+            <div id="down">
+              <button id="location">&#xf689;</button><button id="contact">contact</button><p id="discreption"> some description heare... </p>
+            </div>
+          </div>
+        </div>
+        <div class="profile">
+          <div id="profile_image">
+            <img src="/base/stastic/house-clipart.jpg">
+          </div>
+          <div id="profile_detils">
+            <div>
+              <h3 id="prfilename">Xyz</h3>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <h4><span id="profile_content">room:</span> <span id="available"> available 1 bed with rent 1200</span></h4>
+              <h4><span id="profile_content">type:</span><span id="type"></span></h4>
+              <h4><span id="profile_content">rent:</span><span id="rent"></span></h4>
+            </div>
+            <div id="down">
+              <button id="location">&#xf689;</button><button id="contact">contact</button><p id="discreption">some description heare...</p>
+            </div>
+          </div>
+        </div>
+        <div class="profile">
+          <div id="profile_image">
+            <img src="/base/stastic/house-clipart.jpg">
+          </div>
+          <div id="profile_detils">
+            <div>
+              <h3 id="prfilename">Xyz</h3>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <h4><span id="profile_content">room:</span> <span id="available"> available 1 bed with rent 1200</span></h4>
+              <h4><span id="profile_content">type:</span><span id="type"></span></h4>
+              <h4><span id="profile_content">rent:</span><span id="rent"></span></h4>
+            </div>
+            <div id="down">
+              <button id="location">&#xf689;</button><button id="contact">contact</button><p id="discreption">hloo</p>
+            </div>
+          </div>
+        </div>
+        <div class="profile">
+          <div id="profile_image">
+            <img src="/base/stastic/house-clipart.jpg">
+          </div>
+          <div id="profile_detils">
+            <div>
+              <h3 id="prfilename">Xyz</h3>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <h4><span id="profile_content">room:</span> <span id="available"></span></h4>
+              <h4><span id="profile_content">type:</span><span id="type"></span></h4>
+              <h4><span id="profile_content">rent:</span><span id="rent"></span></h4>
+            </div>
+            <div id="down">
+              <button id="location">&#xf689;</button><button id="contact">contact</button><p id="discreption">hloo</p>
+            </div>
+          </div>
+        </div>
+        <div class="profile">
+          <div id="profile_image">
+            <img src="/base/stastic/house-clipart.jpg">
+          </div>
+          <div id="profile_detils">
+            <div>
+              <h3 id="prfilename">Xyz</h3>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <h4><span id="profile_content">room:</span> <span id="available"></span></h4>
+              <h4><span id="profile_content">type:</span><span id="type"></span></h4>
+              <h4><span id="profile_content">rent:</span><span id="rent"></span></h4>
+            </div>
+            <div id="down">
+              <button id="location">&#xf689;</button><button id="contact">contact</button><p id="discreption">hloo</p>
+            </div>
+          </div>
+      </div>
+    </div >
+  <div>
+    <div id="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0949867847383!2d-122.4064172846797!3d37.785834979756265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064fa1f72a1%3A0xa3d2be32bfe8f9f9!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1696871780946!5m2!1sen!2s"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="content">
+    <h2>Welcome to Our Location</h2>
+    <p>Here is some additional content below the map.</p>
+  </div>  
+  </div>
+  </div>
+            
+{%endblock content%}
